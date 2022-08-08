@@ -1,12 +1,10 @@
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
-        rows = len(mat)
-        col = len(mat[0])
+        n = len(mat)
         s=0
-        for i in range(rows):
+        for i in range(n):
             s+=mat[i][i]
-        for j in range(col):
-            if [j]!=[(col-1)-j]:
-                s+=mat[j][(col-1)-j]
+            if [i]!=[(n-1)-i]:
+                s+=mat[i][(n-1)-i]
         return s
         
